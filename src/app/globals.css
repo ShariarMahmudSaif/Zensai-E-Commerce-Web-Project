@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+  --accent-red: #FF2E2E;
+  --accent-neon: #39FF14;
+  --charcoal: #1C1C1C;
+  --ash: #B2B2B2;
+  --offwhite: #F5F5F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-charcoal: var(--charcoal);
+  --color-ash: var(--ash);
+  --color-offwhite: var(--offwhite);
+  --color-accent-red: var(--accent-red);
+  --color-accent-neon: var(--accent-neon);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-accent: var(--font-accent);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+@keyframes neon-glow {
+  0%, 100% { text-shadow: 0 0 8px #39FF14, 0 0 16px #39FF14; }
+  50% { text-shadow: 0 0 2px #39FF14, 0 0 6px #39FF14; }
+}
+
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(57,255,20,0.6); }
+  100% { box-shadow: 0 0 0 16px rgba(57,255,20,0); }
+}
+
+@keyframes bounce-neon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
